@@ -1,9 +1,5 @@
-networking/*/bin
-networking/*/include
-networking/*/lib
-networking/*/pyvenv.cfg
-web-based/*/bin
-web-based/*/include
-web-based/*/lib
-web-based/*/pyvenv.cfg
+networking/port-scanner/bin
+networking/port-scanner/include
+networking/port-scanner/lib
+networking/port-scanner/pyvenv.cfg
 */.idea
