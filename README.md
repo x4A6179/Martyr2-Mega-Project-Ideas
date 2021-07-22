@@ -1,17 +1,17 @@
 # Welcome to my take on [Martyr2's Project List](https://www.dreamincode.net/forums/topic/78802-martyr2s-mega-project-ideas-list/)
 
-### Plan:
+## Plan:
 I plan on doing a handful of these projects to build up my experience.
 A lot of these will be networking & web-based since I'm most interested in cybersecurity but there will be also some others for general practice/improvement
 See the following sections for the projects I've done (or will be doing).
 
 ### Networking:
-- Port Scanner
-- Small Web Server
-- Packet Sniffer
-- Whois Search Tool
+- Port Scanner (WIP)
+- Small Web Server (Not Started)
+- Packet Sniffer (Not Started)
+- Whois Search Tool (Not Started)
 
 ### Web-Based:
-- Page Scraper
-- Password Checker
-- Automated Login/Scheduled Login
+- Page Scraper (Not Started)
+- Password Checker (Not Started)
+- Automated Login/Scheduled Login (Not Started)
