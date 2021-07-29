@@ -1,3 +1,4 @@
 networking/port-scanner/*
 web-based/web-apps/*
-*/.idea
+*.idea/*
+*.creds
