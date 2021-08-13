@@ -1,12 +1,36 @@
-# possible to use scapy for the scanning purposes
-# need to take in user input from the command line so use sys module (sys.argv)
-# sys.argv splits based on the space delimiter
+import argparse
+import sys
+from scapy.all import *
+
+
+def collect_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--ip', help='IPv4 address you want to scan')
+    parser.add_argument('-6', help='IPv6 address you want to scan')
+    parser.add_argument('-p', '--port', help='Port(s) you want to scan')
+    parser.add_argument('-f', '--flag', help='Flag(s) you want to set in payload')
+    args = parser.parse_args()
+    return args
+
+
+def scan():
+
+    pass
+
+
+if __name__ == '__main__':
+    # collect arguments here to pass into scan function
+    # check for ipv6 addr
+    # check ports for '-' or ',' ; if '-', get range for ports else split by ',' --> place result in array
+    # handle flags after simple port scanning works (use syn only for now)
+    # pass args to scan function
+    pass
+
 # create logic to pull up the interactive console if no inputs are given (or may just be the base case)
 '''
 General Logic (MVP):
 1. call script from command line with ip & ports want to scan
-1a. have capability where user can input -p & -i for indicating ip and port
-1ab. look for -i index & -p index & increment +1 to get the corresponding value
+    have capability where user can input -p & -i for indicating port and ip
 
 2. if correct input supplied then conduct scan by crafting scapy syn packet and sending to ip:port
 2a. if incorrect input, trigger fail route
