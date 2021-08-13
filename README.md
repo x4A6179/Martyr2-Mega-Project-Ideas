@@ -8,10 +8,10 @@ See the following sections for the projects I've done (or will be doing).
 ### Networking:
 - Port Scanner (WIP)
 - Small Web Server (Not Started)
-- Packet Sniffer (Not Started)
+- Packet Sniffer (WIP)
 - Whois Search Tool (Not Started)
 
 ### Web-Based:
 - Page Scraper (Not Started)
-- Password Checker (Not Started)
+- Password Checker (WIP)
 - Automated Login/Scheduled Login (Not Started)
