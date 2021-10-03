@@ -5,7 +5,7 @@ from scapy.all import *
 
 def collect_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--ip', help='IPv4 address you want to scan')
+    parser.add_argument('-h', '--host', help='IPv4 address you want to scan')
     parser.add_argument('-6', help='IPv6 address you want to scan')
     parser.add_argument('-p', '--port', help='Port(s) you want to scan')
     parser.add_argument('-f', '--flag', help='Flag(s) you want to set in payload')
@@ -20,6 +20,25 @@ def scan():
 
 if __name__ == '__main__':
     # collect arguments here to pass into scan function
+    args = collect_args()
+    if args.6:
+        print("ipv6 scan starting")
+    if args.h:
+        host = args.h
+    if args.p:
+        port = args.p
+    if args.f:
+        flags = args.f
+
+    totalPorts = [port for port in args.p]
+
+    if 't' in args.f:
+        if 's' in args.f:
+            sPkt = sr1(IP(dst=host)/TCP(dport=totalPorts, flags='S'))
+        elif 'x' in args.f:
+            sPkt = sr1(IP(dst=host)/TCP(dport=totalPorts, flags='UPR'))
+    elif 'u' in args.f:
+        sPkt = sr1(IP(dst=host)/UDP(dport=totalPorts))
     # check for ipv6 addr
     # check ports for '-' or ',' ; if '-', get range for ports else split by ',' --> place result in array
     # handle flags after simple port scanning works (use syn only for now)
