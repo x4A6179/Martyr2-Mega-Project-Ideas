@@ -1,16 +1,25 @@
 import argparse
 import sys
 from scapy.all import *
+import socket
 
 
 def collect_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-h', '--host', help='IPv4 address you want to scan')
-    parser.add_argument('-6', help='IPv6 address you want to scan')
+    parser.add_argument('-v6', help='IPv6 address you want to scan')
     parser.add_argument('-p', '--port', help='Port(s) you want to scan')
     parser.add_argument('-f', '--flag', help='Flag(s) you want to set in payload')
+    parser.add_argument('-sT', help='enable full TCP connection when port scanning')
     args = parser.parse_args()
     return args
+
+
+def craft_packet(proto: str, flag_list: []):
+    # this function should be called only to craft a scapy packet
+    # inputs include protocol (tcp/udp) & flag to be set in the payload
+    # upon crafting should return Scapy packet object
+    pass
 
 
 def scan():
@@ -21,7 +30,7 @@ def scan():
 if __name__ == '__main__':
     # collect arguments here to pass into scan function
     args = collect_args()
-    if args.6:
+    if args.v6:
         print("ipv6 scan starting")
     if args.h:
         host = args.h
